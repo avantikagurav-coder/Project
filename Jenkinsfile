@@ -1,14 +1,16 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven'
-    }
-
     stages {
-        stage('Build & Test') {
+        stage('Clone') {
             steps {
-                bat 'mvn clean test'
+                git 'https://github.com/avantikagurav-coder/Project.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo "Build successful"
             }
         }
     }
