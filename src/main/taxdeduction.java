@@ -1,3 +1,4 @@
+package src.main;
 public class taxdeduction {
 
     private static final double TAX_RATE = 0.2076923077; 
