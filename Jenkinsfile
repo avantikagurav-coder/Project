@@ -1,7 +1,17 @@
 node {
 
+    stage('Clean') {
+        deleteDir()   // wipes old workspace completely
+    }
+
     stage('Clone Code') {
-        git 'https://github.com/avantikagurav-coder/Project.git'
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/main']],   
+            userRemoteConfigs: [[
+                url: 'https://github.com/avantikagurav-coder/Project.git'
+            ]]
+        ])
     }
 
     stage('Build') {
