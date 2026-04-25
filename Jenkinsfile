@@ -1,7 +1,7 @@
 node {
 
     stage('Clone Code') {
-        git branch: 'main', url: 'https://github.com/avantikagurav-coder/Project.git'
+        git branch: 'member4-net-salary', url: 'https://github.com/avantikagurav-coder/Project.git'
     }
 
     stage('Build') {
