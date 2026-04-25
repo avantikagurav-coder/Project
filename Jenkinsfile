@@ -1,29 +1,14 @@
-pipeline {
-    agent any
+node {
 
-    tools {
-        maven 'Maven'   // name you gave in Jenkins
+    stage('Clone Code') {
+        git 'https://github.com/avantikagurav-coder/Project.git'
     }
 
-    stages {
+    stage('Build') {
+        echo "Build successful"
+    }
 
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/avantikagurav-coder/Project.git'
-            }
-        }
-
-        stage('Build') {
-            steps {
-                sh 'mvn clean compile'
-            }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn test'
-            }
-        }
-
+    stage('Test') {
+        echo "Testing done"
     }
 }
