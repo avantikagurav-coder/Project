@@ -1,25 +1,14 @@
-pipeline {
-    agent any
+node {
 
-    stages {
+    stage('Clone Code') {
+        git 'https://github.com/avantikagurav-coder/Project.git'
+    }
 
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/avantikagurav-coder/Project.git'
-            }
-        }
+    stage('Build') {
+        echo "Build successful"
+    }
 
-        stage('Build') {
-            steps {
-                echo "Project build successful"
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "No tests configured"
-            }
-        }
-
+    stage('Test') {
+        echo "Testing done"
     }
 }
