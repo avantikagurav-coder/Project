@@ -1,14 +1,27 @@
-node {
+pipeline {
+    agent any
 
-    stage('Clone Code') {
-        git 'https://github.com/avantikagurav-coder/Project.git'
-    }
+    stages {
+        stage('Clone Code') {
+            steps {
+                git 'https://github.com/avantikagurav-coder/Project.git'
+            }
+        }
 
-    stage('Build') {
-        echo "Build successful"
-    }
+        stage('Build') {
+            steps {
+                echo "Build successful"
+                // Example:
+                // sh 'npm install'
+            }
+        }
 
-    stage('Test') {
-        echo "Testing done"
+        stage('Test') {
+            steps {
+                echo "Testing done"
+                // Example:
+                // sh 'npm test'
+            }
+        }
     }
 }
