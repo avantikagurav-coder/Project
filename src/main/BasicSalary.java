@@ -6,7 +6,14 @@ public class BasicSalary {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter Basic Salary: ");
-        double salary = sc.nextDouble();
+
+        double salary;
+
+        if (sc.hasNextDouble()) {
+            salary = sc.nextDouble();
+        } else {
+            salary = 50000;
+        }
 
         System.out.println("Basic Salary is: " + salary);
 
